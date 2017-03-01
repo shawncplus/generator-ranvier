@@ -1,0 +1,5 @@
+---
+title: <%= title %>
+info:
+  respawnInterval: <%= respawnInterval %>
+# Documenation: http://ranviermud.com/extending/areas/items/
