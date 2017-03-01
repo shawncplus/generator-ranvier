@@ -17,36 +17,36 @@ module.exports = class extends Generator {
       }
     }, {
       type: 'input',
-      name: 'name',
-      message: 'Command name (a-z, no spaces or special characters)',
+      name: 'events',
+      message: 'Events (comma separated list)',
       validate: function (input) {
-        if (input.length && input.match(/^[a-z\-_]+$/)) {
+        if (input.length && input.match(/^[a-z, ]+$/i)) {
           return true;
         }
 
-        return 'Invalid command name';
+        return 'Invalid event name';
       }
     }]).then(answers => {
       this.options.bundle = answers.bundle;
-      this.options.name = answers.name;
+      this.options.events = answers.events.split(/, */);
     });
   }
 
   writing() {
-    const commandDir = `bundles/${this.options.bundle}/commands/`;
-    const targetFile = this.destinationPath(commandDir + this.options.name + '.js');
-
+    const bundleDir = `bundles/${this.options.bundle}/`;
+    const targetFile = this.destinationPath(bundleDir + 'player-events.js');
     if (this.fs.exists(targetFile)) {
-      return this.log('Command already exists');
+      return this.log('Player-events file exists');
     }
 
-    this.log(`Creating bundles/${this.options.bundle}/commands/${this.options.name}.js`);
+    this.log(`Creating bundles/${this.options.bundle}/player-events.js`);
 
-    mkdirp.sync(commandDir);
+
+    mkdirp.sync(bundleDir);
     this.fs.copyTpl(
-      this.templatePath('command.js'),
+      this.templatePath('player-events.js'),
       targetFile,
-      { command: this.options.name }
+      { events: this.options.events }
     );
   }
 };
