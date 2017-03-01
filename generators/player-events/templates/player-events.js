@@ -1,5 +1,7 @@
 'use strict';
 
+// Documentation: http://ranviermud.com/extending/events/
+
 module.exports = srcPath => {
   const Broadcast = require(srcPath + 'Broadcast');
 

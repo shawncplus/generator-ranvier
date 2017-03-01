@@ -1,6 +1,6 @@
 {
   "name": "generator-ranvier",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Generators for the Ranvier MUD game engine",
   "homepage": "http://ranviermud.com",
   "author": {
@@ -13,7 +13,6 @@
   ],
   "main": "generators/index.js",
   "keywords": [
-    "",
     "yeoman-generator"
   ],
   "dependencies": {
