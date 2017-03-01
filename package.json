@@ -1,6 +1,6 @@
 {
   "name": "generator-ranvier",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Generators for the Ranvier MUD game engine",
   "homepage": "http://ranviermud.com",
   "author": {
