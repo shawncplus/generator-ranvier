@@ -2,4 +2,4 @@
 title: <%= title %>
 info:
   respawnInterval: <%= respawnInterval %>
-# Documenation: http://ranviermud.com/extending/areas/items/
+# Documentation: http://ranviermud.com/extending/areas/items/
